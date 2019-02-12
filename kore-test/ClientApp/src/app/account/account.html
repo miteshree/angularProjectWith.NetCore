@@ -17,20 +17,11 @@
         <tr>
           <th>Name</th>
           <th>Website</th>
-          <th>Telephoneth</th>
+          <th>Telephone</th>
           <th>Address</th>
           <th>Duplicate Contacts</th>
         </tr>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
       </thead>
-      <!--<input [(ngModel)]="searchText" placeholder="search text goes here">-->
       <tbody *ngFor="let item of accountList | async | filter: searchText ">
         <tr [ngClass]="{ 'highlight': item.contactId == 0 }" *ngIf="!hide">
           <td> {{ item.name }} </td>

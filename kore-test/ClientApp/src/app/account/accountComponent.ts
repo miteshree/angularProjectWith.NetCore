@@ -25,7 +25,6 @@ export class AccountComponent implements OnInit {
     //    console.log("in ngOnInit");  
     this.accountList = this.dataService.accountList;
     this.dataService.getAll();
-    console.log(this.accountList);
       
     }
   }
