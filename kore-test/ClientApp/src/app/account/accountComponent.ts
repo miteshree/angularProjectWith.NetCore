@@ -29,13 +29,3 @@ export class AccountComponent implements OnInit {
       
     }
   }
-
-  //public addEmployee(item: Employee) {
-  //  let employeeId = this.dataService.addEmployee(this.employee);
-  //}
-  //public updateEmployee(item: Employee) {
-  //  this.dataService.updateEmployee(item);
-  //}
-  //public deleteEmployee(employeeId: number) {
-  //  this.dataService.removeItem(employeeId);
-  //}
