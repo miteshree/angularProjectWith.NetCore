@@ -1,0 +1,1 @@
+# angularProjectWith.NetCore
