@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<div id="summary" class="section panel panel-primary">
+  <div class="panel-heading"> Account List</div>
+    <label>Search using account name</label>
+    <input [(ngModel)]="searchText" placeholder="search text goes here">
+  <div class="form-group">
+    <div class="form-control">
+      <label class="checkbox-inline">
+        <input type="checkbox" name="hide" [(ngModel)] ="hide" /> Hide Duplicate Contacts
+      </label>
+    </div>
+  </div>
+  <div class="container col-xs-12">
+    <!--{{accountList | json}}-->
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Website</th>
+          <th>Telephoneth</th>
+          <th>Address</th>
+          <th>Duplicate Contacts</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <!--<input [(ngModel)]="searchText" placeholder="search text goes here">-->
+      <tbody *ngFor="let item of accountList | async | filter: searchText ">
+        <tr [ngClass]="{ 'highlight': item.contactId == 0 }" *ngIf="!hide">
+          <td> {{ item.name }} </td>
+          <td> {{ item.website }} </td>
+          <td> {{ item.telephone }}</td>
+          <td> {{ item.address }}</td>
+          <td> {{item.contactName}} </td>
+          <td>
+        </tr>
+        <tr *ngIf="hide && item.contactId != 0">
+          <td> {{ item.name }} </td>
+          <td> {{ item.website }} </td>
+          <td> {{ item.telephone }}</td>
+          <td> {{ item.address }}</td>
+          <td> {{item.contactName}} </td>
+          <td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .panel-heading {
+    text-align: center;
+    font-size: 18px;
+  }
+  .highlight {
+    background-color: #a94442 !important;
+  }
+</style>
